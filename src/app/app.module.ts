@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OnamaComponent } from './onama/onama.component';
 import { PreporukaComponent } from './preporuka/preporuka.component';
 import { PonudaComponent } from './ponuda/ponuda.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +17,14 @@ import { PonudaComponent } from './ponuda/ponuda.component';
     NavbarComponent,
     OnamaComponent,
     PreporukaComponent,
-    PonudaComponent
+    PonudaComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

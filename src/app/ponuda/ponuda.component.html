@@ -1,4 +1,7 @@
-<h1>LETOVI U PONUDI</h1><br><br>
+
+
+  <h1>LETOVI U PONUDI</h1><br><br>
+  
   <div class="ui grid posts">
   
     <table>
@@ -8,4 +11,30 @@
   
   
   
-  </div>
+  </div><br><br>
+
+  
+    <h3 class="ui header">Dodajte let</h3>
+    <form [formGroup]="forma" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <label for="naziv">Naziv: </label>
+      <input name="naziv" #newnaziv placeholder="RS - 1234" formControlName="imeLeta">
+      <p style="color: red;" *ngIf="imeLeta.invalid && imeLeta.touched">Naziv nije validan!! (pogledajte primer)</p>
+    </div><br>
+    <div class="field">
+      <label for="od">Od: </label>
+      <input name="od" #newod formControlName="uzletanje">
+      <p style="color: red;" *ngIf="uzletanje.invalid && uzletanje.touched">Naziv nije validan!! (minimalan broj karaktera je 3)</p>
+    </div><br>
+    <div class="field">
+      <label for="doo">Do: </label>
+      <input name="doo" #newdo formControlName="sletanje">
+      <p style="color: red;" *ngIf="sletanje.invalid && sletanje.touched">Naziv nije validan!! (minimalan broj karaktera je 3)</p>
+    </div><br>
+      <div class="izbor" *ngFor="let stavka of izbor">
+        <input type="checkbox" name="" id="" [value]="stavka.id" [checked]="stavka.cek" (change)="fetchSelectedItems($event)">{{stavka.naziv}}
+      </div>
+    <button (click)="addFlight(newnaziv, newod, newdo); ispisi()" class="ui positive right floated button">
+      Dodaj
+    </button>
+  </form>
