@@ -9,6 +9,8 @@ import { OnamaComponent } from './onama/onama.component';
 import { PreporukaComponent } from './preporuka/preporuka.component';
 import { PonudaComponent } from './ponuda/ponuda.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ZavisnostComponent } from './zavisnost/zavisnost.component';
+import { LetoviService } from './zavisnost/letovi-servis';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     OnamaComponent,
     PreporukaComponent,
     PonudaComponent,
+    ZavisnostComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
    
   ],
-  providers: [],
+  providers: [LetoviService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
