@@ -11,6 +11,8 @@ import { PonudaComponent } from './ponuda/ponuda.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ZavisnostComponent } from './zavisnost/zavisnost.component';
 import { LetoviService } from './zavisnost/letovi-servis';
+import { LetoviBazaComponent } from './letovi-baza/letovi-baza.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,14 @@ import { LetoviService } from './zavisnost/letovi-servis';
     PreporukaComponent,
     PonudaComponent,
     ZavisnostComponent,
+    LetoviBazaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-   
+    ReactiveFormsModule,
+    HttpClientModule   
   ],
   providers: [LetoviService],
   bootstrap: [AppComponent]

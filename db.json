@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "naziv": "KL - 1905",
+      "od": "Amsterdam",
+      "do": "Beograd"
+    },
+    {
+      "id": 2,
+      "naziv": "RS - 1234",
+      "od": "Beograd",
+      "do": "Milano"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,58 @@
+<button (click)="clickDodajLet()" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Dodaj let</button>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Naziv leta</th>
+            <th scope="col">Od</th>
+            <th scope="col">Do</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of flightData">
+            <td>{{row.id}}</td>
+            <td>{{row.naziv}}</td>
+            <td>{{row.od}}</td>
+            <td>{{row.do}}</td>
+            <td>
+                <button (click)="onEdit(row)" class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                <button (click)="deleteLet(row)" class="btn btn-danger mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalji o letu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                  <label for="naziv" class="form-label">Naziv</label>
+                  <input type="text" formControlName="naziv" class="form-control" id="naziv">
+                </div>
+                <div class="mb-3">
+                  <label for="od" class="form-label">Od</label>
+                  <input type="text" formControlName="od" class="form-control" id="od">
+                </div>
+                <div class="mb-3">
+                    <label for="do" class="form-label">Do</label>
+                    <input type="text" formControlName="do" class="form-control" id="do">
+                  </div>
+
+              </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+            <button type="button" *ngIf="showAdd" (click)="postDetaljiLeta()" class="btn btn-primary">Dodaj</button>
+            <button type="button" *ngIf="showUpdate" (click)="updateDetaljiLeta()" class="btn btn-primary">Izmeni</button>
+        </div>
+      </div>
+    </div>
+  </div>
