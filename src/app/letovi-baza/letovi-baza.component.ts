@@ -63,6 +63,7 @@ export class LetoviBazaComponent implements OnInit {
   getAllLetovi() {
     this.api.getLet().subscribe(res => {
       this.flightData = res;
+      console.log("Letovi", res);
     })
   }
 

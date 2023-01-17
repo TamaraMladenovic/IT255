@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "letovi": [
     {
       "id": 1,
       "naziv": "KL - 1905",
@@ -10,7 +10,7 @@
       "id": 2,
       "naziv": "RS - 1234",
       "od": "Beograd",
-      "do": "Milano"
+      "do": "Pariz"
     }
   ],
   "comments": [],

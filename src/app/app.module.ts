@@ -13,6 +13,7 @@ import { ZavisnostComponent } from './zavisnost/zavisnost.component';
 import { LetoviService } from './zavisnost/letovi-servis';
 import { LetoviBazaComponent } from './letovi-baza/letovi-baza.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ApiService } from './shared/api.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule   
   ],
-  providers: [LetoviService],
+  providers: [LetoviService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
