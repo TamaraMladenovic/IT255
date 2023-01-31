@@ -14,6 +14,10 @@ import { LetoviService } from './zavisnost/letovi-servis';
 import { LetoviBazaComponent } from './letovi-baza/letovi-baza.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ApiService } from './shared/api.service';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { flightReducer, metaReducerLocalStorage } from './state/flight.reducer';
+import { RezervacijeLetovaComponent } from './rezervacije-letova/rezervacije-letova.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +29,16 @@ import { ApiService } from './shared/api.service';
     PonudaComponent,
     ZavisnostComponent,
     LetoviBazaComponent,
+    RezervacijeLetovaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule   
+    HttpClientModule,
+    EffectsModule.forRoot([]),
+    StoreModule.forRoot({rezervacijeUnosi: flightReducer}, {metaReducers: [metaReducerLocalStorage]}),   
   ],
   providers: [LetoviService, ApiService],
   bootstrap: [AppComponent]

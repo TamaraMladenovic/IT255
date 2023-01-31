@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import { Flight } from '../flight/flight.model';
+import { addReservation } from '../state/flights.actions';
 import { Izbor } from './izbor.model';
+
 
 @Component({
   selector: 'app-ponuda',
@@ -48,6 +51,8 @@ export class PonudaComponent implements OnInit {
       new Izbor(4, "Besplatno otkazivanje i refundacija", 3000, false),
     ]
   }
+
+  
 
   ngOnInit(): void {
   }

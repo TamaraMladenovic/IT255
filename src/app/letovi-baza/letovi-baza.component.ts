@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
 import { LetoviBazaModel } from './letovi-baza.model';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { addReservation } from '../state/flights.actions';
+import { Flight } from '../flight/flight.model';
 
 @Component({
   selector: 'app-letovi-baza',
@@ -19,7 +22,7 @@ export class LetoviBazaComponent implements OnInit {
   showAdd!: boolean;
   showUpdate!: boolean;
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService) {
+  constructor(private formBuilder: FormBuilder, private api: ApiService, private store: Store) {
 
   }
 
@@ -31,6 +34,10 @@ export class LetoviBazaComponent implements OnInit {
       do: ['']
     })
     this.getAllLetovi();
+  }
+
+  rezervisiSediste(flight: Flight){
+    this.store.dispatch(addReservation(flight));
   }
 
   clickDodajLet() {

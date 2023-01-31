@@ -6,12 +6,14 @@ import { LetoviBazaComponent } from './letovi-baza/letovi-baza.component';
 import { OnamaComponent } from './onama/onama.component';
 import { PonudaComponent } from './ponuda/ponuda.component';
 import { PreporukaComponent } from './preporuka/preporuka.component';
+import { RezervacijeLetovaComponent } from './rezervacije-letova/rezervacije-letova.component';
 
 const routes: Routes = [
   { path: 'ponuda', component: PonudaComponent },
   { path: 'preporuka', component: PreporukaComponent },
   { path: 'onama', component: OnamaComponent, },
-  { path: 'let', component: LetoviBazaComponent,}
+  { path: 'let', component: LetoviBazaComponent,},
+  { path: 'rez', component: RezervacijeLetovaComponent,}
 ];
 
 @NgModule({

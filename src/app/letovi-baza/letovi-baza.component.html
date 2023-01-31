@@ -1,3 +1,4 @@
+
 <button (click)="clickDodajLet()" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Dodaj let</button>
 
 <table class="table mt-3">
@@ -18,6 +19,7 @@
             <td>
                 <button (click)="onEdit(row)" class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
                 <button (click)="deleteLet(row)" class="btn btn-danger mx-3">Delete</button>
+              <button (click)="rezervisiSediste(row)" class="btn btn-success">Rezerviši sedište</button>
             </td>
         </tr>
     </tbody>
