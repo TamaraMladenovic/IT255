@@ -18,6 +18,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { flightReducer, metaReducerLocalStorage } from './state/flight.reducer';
 import { RezervacijeLetovaComponent } from './rezervacije-letova/rezervacije-letova.component';
+import { MockComponent } from './mock/mock.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { RezervacijeLetovaComponent } from './rezervacije-letova/rezervacije-let
     ZavisnostComponent,
     LetoviBazaComponent,
     RezervacijeLetovaComponent,
+    MockComponent,
   ],
   imports: [
     BrowserModule,
